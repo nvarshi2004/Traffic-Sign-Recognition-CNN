@@ -12,16 +12,33 @@ The goal of this project is to accurately classify traffic signs, which is a cru
 
 ## Dataset
 
-The GTSRB dataset was used for training and validation.  You can find more information about it [link to GTSRB dataset]. It contains images of 43 different classes of traffic signs. [cite: 104, 105]
+The GTSRB dataset was used for training and validation.  You can find more information about it "https://www.kaggle.com/datasets/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign". It contains images of 43 different classes of traffic signs. 
 
 ## Model Architecture
 
 The CNN architecture consists of the following layers:
 
-* Convolutional layers (32, 64, 128 filters) with ReLU activation [cite: 105]
-* Max Pooling layers [cite: 105]
-* Flatten layer [cite: 105]
-* Dense layers (256 units, 43 units) [cite: 105]
-* Dropout layer (0.5) [cite: 105]
+* Convolutional layers (32, 64, 128 filters) with ReLU activation 
+* Max Pooling layers 
+* Flatten layer 
+* Dense layers (256 units, 43 units) 
+* Dropout layer (0.5) 
 
 The model summary is as follows:
+Model: "sequential"
+Layer (type)                Output Shape              Param #   
+=================================================================
+conv2d (Conv2D)             (None, 30, 30, 32)        4896      
+max_pooling2d (MaxPooling2D) (None, 15, 15, 32)        0         
+conv2d_1 (Conv2D)           (None, 13, 13, 64)        18496     
+max_pooling2d_1 (MaxPooling2D) (None, 6, 6, 64)         0         
+conv2d_2 (Conv2D)           (None, 4, 4, 128)         73856     
+max_pooling2d_2 (MaxPooling2D) (None, 2, 2, 128)         0         
+flatten (Flatten)           (None, 512)               0         
+dense (Dense)               (None, 256)               131328    
+dropout (Dropout)           (None, 256)               0         
+dense_1 (Dense)             (None, 43)                11051     
+=================================================================
+Total params:                235627 (920.42 KB)
+Trainable params:            235627 (920.42 KB)
+Non-trainable params:        0 
